@@ -117,3 +117,41 @@ Welcome to the XV Quiz for CSL 3030 - Operating Systems!
 
 ## Answers
 Please write your answers here
+1. b
+2. c
+3. d
+4. b
+5. a
+6. c
+7. a
+8. a
+9. d
+10. b
+11. c
+
+12. 
+--> Unused: process is not in use or has been terminated, might be waiting to be assigned to a new program.
+--> Embryo: process is in the process of being created but is not yet ready to run, it is still undergoing initialization.
+--> Sleeping: process is waiting for an event to occur. This could be waiting for user input, for a file to become available etc.
+--> Runnable: process is ready to run and is waiting to be scheduled by the operating system's scheduler. It is in the main memory and can be scheduled to run on the CPU.
+--> Running: process is currently being executed on the CPU.
+--> Zombie: process has completed execution, but its exit status is still needed by its parent process. The process remains in the system until the parent retrieves its exit status.( similar to that of linux zimbie process)
+    
+13. XV6 consists of 7 layers
+Disk: it reads and writes blocks on an Virtio hard drive.
+Buffer cache: It caches the disk blocks and synchronizes them such that only one kernel prcoess modify data at a time.
+Logging: it allows the higher layers to wrap updates to several blocks in a transaction, also ensuring that the blocks are updated atomically.
+Inode: It provides individual file each called an inode with a unique i-number.
+Directory : It implement each directory as a specail type of inode.
+Pathname: provide hierarchal file name
+File decripter: It abstracts many unix layer (e.g., pipes, devices, files, etc.) using the file
+system interface.
+
+15. XV6 uses a two-level page table structure. The top-level page table is pointed to by a register, and each entry in this table points to a page directory.
+
+16. Three shell commands are:
+ls: displays a list of files and directories in the current directory.
+cd: Changes the current working directory to the specified directory.
+cp: Copies files or directories from a source location to a destination.
+
+17. 
