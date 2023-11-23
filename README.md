@@ -147,7 +147,10 @@ Pathname: provide hierarchal file name
 File decripter: It abstracts many unix layer (e.g., pipes, devices, files, etc.) using the file
 system interface.
 
-15. XV6 uses a two-level page table structure. The top-level page table is pointed to by a register, and each entry in this table points to a page directory.
+14. Library functions are functions that are written in user-mode code and are linked into user-mode programs. They provide a higher-level interface for accessing OS. eg: printf, malloc, free.
+System calls are a way for user programs to request services from the kernel-mode os. They are implemented as special instructions that cause a trap into the kernel, where the requested service is performed. eg: fork, exec, open
+
+15. In XV6, memory paging divides virtual addresses into fixed-size pages, mapping them to physical page frames through a hierarchical page table structure. Paging benefits memory management by providing a contiguous virtual address space for each process, enabling efficient use of physical memory, isolating processes for security, and supporting demand paging. This allows the system to load only necessary pages, optimizing resource utilization and facilitating dynamic allocation and deallocation of memory.
 
 16. Three shell commands are:
 --> ls: displays a list of files and directories in the current directory.
