@@ -150,8 +150,14 @@ system interface.
 15. XV6 uses a two-level page table structure. The top-level page table is pointed to by a register, and each entry in this table points to a page directory.
 
 16. Three shell commands are:
-ls: displays a list of files and directories in the current directory.
-cd: Changes the current working directory to the specified directory.
-cp: Copies files or directories from a source location to a destination.
+--> ls: displays a list of files and directories in the current directory.
+--> cd: Changes the current working directory to the specified directory.
+--> cp: Copies files or directories from a source location to a destination.
 
-17. 
+17. In XV6, process synchronization is vital to prevent race conditions and ensure data consistency in a multi-process environment. Locks provide mutual exclusion for critical sections, semaphores control access to shared resources, and conditional variables allow processes to wait for specific conditions. These mechanisms safeguard against deadlocks, coordinate process execution, and maintain the integrity of shared data, contributing to the overall stability and reliability of the operating system.
+
+18. Interrupts play a crucial role in XV6 by allowing the operating system to respond to events asynchronously. When a hardware event or exceptional condition occurs, an interrupt is triggered, causing the CPU to suspend its current task and execute an interrupt service routine. XV6 handles interrupts by using an interrupt descriptor table. Significantly, interrupts enable efficient event-driven processing, supporting timely responses to external events and improving overall system responsiveness and functionality.
+
+19. Virtual memory in XV6 is a memory management technique that provides processes with an illusion of a larger address space than physically available. It is implemented using paging, where virtual addresses are mapped to physical addresses through page tables. This allows efficient use of physical memory and enables processes to execute in a contiguous address space. Advantages include improved process isolation, simplified memory allocation, and the ability to run larger programs than the available physical memory allows.
+
+20. In the XV6 boot process, the computer is powered on, and the firmware (e.g., BIOS) loads the bootloader (e.g., GRUB). The bootloader then loads the XV6 kernel from the storage device into memory. The kernel initializes essential data structures, sets up page tables, configures devices, and starts the first user-level process. Finally, control is transferred to the user process, marking the completion of the boot process and the initiation of the operating system's functionality.
